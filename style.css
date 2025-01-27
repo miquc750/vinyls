@@ -27,7 +27,7 @@ h3, p, button {
     line-height: 1;
 }
 
-p {
+p, .close {
     display: none;
 }
 
@@ -37,16 +37,29 @@ button:hover {
 }
 
 menu {
+    position: fixed;
+    top: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     width: 100%;
     gap: 10%;
     height: 10vh;
+    z-index: 10;
+    background-color: white;
+}
+
+.items {
+    transition: all 1s linear;
+}
+
+.items:not(.vinyl-grid) {
+    display: block; /* Modo stack, apilado verticalmente */
 }
 
 section .vinyl {
-    display: flex;
+    display: block;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -63,4 +76,61 @@ section .vinyl {
 
 img {
     max-width: 50vw;
+}
+
+/* we enter grid mode */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.vinyl-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    column-gap: 8%;
+    transform: scale(1.3);
+}
+
+.vinyl-grid h2, .vinyl-grid h3 {
+    display: none;
+}
+
+.vinyl-grid div, .vinyl-grid .vinyl {
+    max-width: fit-content;
+    max-height: fit-content;
+    margin-top: 4.9vh;
+}
+
+.vinyl-grid img {
+    width: 100%;
+    height: 100%;
+}
+
+/* we open a vinyl */
+
+.vinyl.open {
+    position:fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 32px;
+}
+
+.vinyl.open h2, .vinyl.open h3, .vinyl.open p, .vinyl.open {
+    display: block;
+}
+
+.vinyl.open .close {
+    display: block;
 }
