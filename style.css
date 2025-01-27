@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Chathura:wght@100;300;400;700;800&display=swap');
+
+:root {
+    --grey: #bebebe;
+    --font-s: 56px;
+    --font-m: 64px;
+}
+
+html {
+    font-family: "Chathura", serif;
+    padding: 0 32px 0 32px;
+    overflow: hidden;
+}
+
+h2 {
+    font-size: var(--font-m);
+    line-height: 1;
+}
+
+h2, h3, button {
+    text-transform: uppercase;
+}
+
+h3, p, button {
+    color: #bebebe;
+    font-size: var(--font-s);
+    line-height: 1;
+}
+
+p {
+    display: none;
+}
+
+button:hover {
+    color: black;
+    transition: 0.5s linear;
+}
+
+menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    gap: 10%;
+    height: 10vh;
+}
+
+section .vinyl {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+.vinyl div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    max-width: 50vw;
+}
